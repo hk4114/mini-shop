@@ -1,0 +1,10 @@
+<view class="good-item-wrapper item-wrapper-class">
+  <t-swipe-cell class="swipe-out">
+    <view class="good {{isDrawLine ? 'draw-line' : ''}}" bindtap="onSelect" data-item="{{good}}">
+      <goods-card showType="list" data="{{good}}" currency="{{item.currency || '¥'}}" />
+    </view>
+    <view slot="right" class="swipe-right-del delete-class" bindtap="onDelete" data-item="{{good}}">
+      删除
+    </view>
+  </t-swipe-cell>
+</view>

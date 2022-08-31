@@ -1,0 +1,12 @@
+<view class="bar-normal-item">
+  <view class="bar-normal-item-second-container">
+    <block wx:for="{{barList}}" wx:key="index">
+      <view class="bar-normal-item-second-container-item" wx:for-key="index" bindtap="changCategory" data-index="{{index}}">
+        <t-image src="{{item.icon}}" t-class="image" />
+        <view class="flex bar-normal-item-container-item-title">
+          {{item.categoriesName}}
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

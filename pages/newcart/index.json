@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "购物车",
+  "usingComponents": {
+    "cart-group": "../cart/components/cart-group/index",
+    "cart-empty": "../cart/components/cart-empty/index",
+    "cart-bar": "../cart/components/cart-bar/index",
+    "cart-edit-bar": "../cart/components/cart-edit-bar/index",
+    "t-toast": "tdesign-miniprogram/toast/toast",
+    "t-dialog": "tdesign-miniprogram/dialog/dialog",
+    "tab-bar": "./components/tab-bar"
+  }
+}

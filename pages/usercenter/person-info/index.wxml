@@ -1,0 +1,13 @@
+<t-cell-group class="person-info">
+  <t-cell title="头像" center="{{true}}" data-type="avatarUrl" bind:click="onClickCell" arrow t-class-left="order-group__left">
+    <t-image slot="note" src="{{personInfo.avatar}}" t-class="avatarUrl" mode="aspectFill" />
+  </t-cell>
+  <t-input value="{{personInfo.nickname}}" placeholder="请输入文字" label="昵称" bindchange="changeName" />
+  <!-- <t-cell title="手机号" arrow note="{{personInfo.phone ? personInfo.phone : '去绑定手机号'}}" data-type="phoneNumber" bind:click="onClickCell" t-class="t-cell-class" t-class-left="order-group__left" /> -->
+</t-cell-group>
+<view class="person-info__wrapper">
+  <view class="person-info__btn" bind:tap="onConfirm">
+    提交修改
+  </view>
+</view>
+<t-toast id="t-toast" />

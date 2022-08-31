@@ -1,0 +1,11 @@
+<view class="collection-container">
+  <view class="collection-list" wx:if="{{collection.length > 0}}">
+    <block wx:for="{{collection}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+      <t-collection-item isDrawLine="{{index+1 !== collection.length}}" extra-space="{{extraSpace}}" class-prefix="ym" item="{{item}}" data-id="{{item.id}}" bind:onSelect="selectHandle" bind:onDelete="deleteHandle" good="{{item}}" />
+    </block>
+  </view>
+  <view wx:else class="no-address">
+    <t-empty icon="" description="暂无收藏" />
+  </view>
+</view>
+<t-toast id="t-toast" />

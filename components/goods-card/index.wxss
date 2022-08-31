@@ -1,0 +1,136 @@
+.flex {
+  display: flex;
+}
+
+.text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.goods-card {
+  box-sizing: border-box;
+  font-size: 24rpx;
+  color: #666;
+  border-radius: 0 0 16rpx 16rpx;
+  border-bottom: none;
+}
+
+.goods-card__main {
+  position: relative;
+  display: flex;
+  line-height: 1;
+  padding: 0;
+  background: transparent;
+  width: 342rpx;
+  border-radius: 0 0 16rpx 16rpx;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16rpx;
+  flex-direction: column;
+}
+
+.goods-card__thumb {
+  flex-shrink: 0;
+  position: relative;
+  width: 340rpx;
+  height: 340rpx;
+}
+
+.goods-item__thumb {
+  flex-shrink: 0;
+  position: relative;
+  width: 170rpx;
+  height: 170rpx;
+}
+
+.goods-card__thumb:empty {
+  display: none;
+  margin: 0;
+}
+
+.goods-card__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 16rpx;
+  overflow: hidden;
+}
+
+.goods-card__body {
+  width: 340rpx;
+}
+
+.goods-card__title {
+  color: #000;
+  font-size: 32rpx;
+  width: 100%;
+  line-height: 54rpx;
+}
+
+.goods-card__pricenum {
+  justify-content: space-between;
+  line-height: 32rpx;
+}
+
+.goods-card__desc {
+  padding: 12rpx 0 0;
+  margin-bottom: 32rpx;
+  line-height: 40rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.spec-for-price {
+  white-space: nowrap;
+  font-weight: 700;
+  order: 1;
+  color: #fa4126;
+  margin: 0;
+}
+
+.goods-item {
+  font-size: 24rpx;
+  padding: 24rpx 0;
+  border-bottom: 1rpx solid #e3e3e3;
+}
+
+.goods-item__texts {
+  flex-grow: 1;
+  width: 512rpx;
+  padding-left: 24rpx;
+  color: #666;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.goods-item__title {
+  color: #000;
+  font-size: 32rpx;
+  line-height: 48rpx;
+  width: 100%;
+}
+
+.goods-item__pricenum {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.goods-item__desc {
+  padding-bottom: 40rpx;
+}
+
+.goods-item__thumb {
+  flex-shrink: 0;
+  position: relative;
+  width: 170rpx;
+  height: 170rpx;
+}
+
+.goods-item__thumb:empty {
+  display: none;
+  margin: 0;
+}

@@ -1,0 +1,29 @@
+<view class="wrap">
+  <view class="aside-wrap">
+    <t-tabs defaultValue="{{activeKey}}" placement="left" bind:change="onTabsChange" show-bottom-line="{{false}}" t-class="tab-bar__inner" t-class-active="tab-bar__active" t-class-track="t-tabs-track">
+      <t-tab-panel wx:for="{{list}}" label="{{item.categoriesName}}" value="{{index}}" wx:key="index"></t-tab-panel>
+    </t-tabs>
+  </view>
+  <view class="nav-wrap">
+    <t-tabs wx:if="{{tabs.length > 0}}" value="{{subActiveKey}}" data-arr="{{list[activeKey].child}}" bind:change="onSubTabsChange" wx:key="index" show-bottom-line="{{false}}" class="subtabs">
+      <t-tab-panel wx:for="{{list[activeKey].child}}" label="{{item.categoriesName}}" value="{{index}}" wx:key="index">
+        <view class="empty-wrap" wx:if="{{goodsList.length === 0 && hasLoaded}}">
+          <t-empty t-class="empty-tips" size="240rpx" description="暂无相关商品" />
+        </view>
+        <view class="category-goods-list" wx:if="{{goodsList.length}}">
+          <scroll-view class="good-list-scroll-wrapper" scroll-y bindscrolltolower="scrollBottom">
+            <goods-list showType="list" wr-class="wr-goods-list" goodsList="{{goodsList}}" bind:click="gotoGoodsDetail" />
+            <t-load-more t-class="no-more" status="{{goodsListLoadStatus}}" no-more-text="没有更多了" color="#BBBBBB" failedColor="#FA550F" />
+          </scroll-view>
+        </view>
+      </t-tab-panel>
+    </t-tabs>
+    <view wx:else="{{goodsList.length}}">
+      <view class="no-sub-title">全部</view>
+      <scroll-view class="good-list-scroll-wrapper" scroll-y>
+        <goods-list showType="list" wr-class="wr-goods-list" goodsList="{{goodsList}}" bind:click="gotoGoodsDetail" />
+        <t-load-more t-class="no-more" status="{{2}}" no-more-text="没有更多了" color="#BBBBBB" failedColor="#FA550F" />
+      </scroll-view>
+    </view>
+  </view>
+</view>

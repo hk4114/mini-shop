@@ -1,0 +1,4 @@
+<!--pages/home/components/divider/index.wxml-->
+<view class="divider-wrapper">
+  <view class="divider-title">{{title}}</view>
+</view>

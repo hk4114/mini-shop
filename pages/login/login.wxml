@@ -1,0 +1,40 @@
+<view class="top-tips">
+  <view class="top-tips-title">您还未登录</view>
+  <view>请先登录再进行操作</view>
+</view>
+<view class="logo-wrapper">
+  <t-image t-class="logo" src="https://image.fanto.cn/profile/upload/0bd5ef0f-5804-4661-97a7-03992a3c703c.jpg" mode="aspectFill" lazy-load />
+</view>
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="content"></view>
+  <view class="hr"></view>
+  <!-- <view class="mobileInfo">
+    <view class="mobile">
+      <input type="text" name="mobile" placeholder="请输入手机号" alue="{{mobile}}" bindblur="mobileblur" />
+    </view>
+    <button class="code" bindtap="getCode" wx:if="{{!showCountDownTime}}">发送验证码</button>
+    <button class="code" wx:else>
+      <t-count-down format="mm分ss秒" time="{{countDownTime}}" />
+    </button>
+  </view> -->
+  <!-- <view class="item">
+    <input type="text" name="code" placeholder="短信验证码" placeholder-class="holder" value="{{code}}" />
+  </view> -->
+  <!-- <button class="btn" type="{{btnstate}}" form-type="submit">登录/注册</button> -->
+  <view class="login-tips">
+    · 未注册将获取您的公开信息（昵称、头像等）注册并登录
+  </view>
+  <view class="btn-wrapper">
+    <t-button theme="primary" wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile" t-class="login-btn w480"> 微信授权 </t-button>
+    <t-button theme="primary" wx:else open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" t-class="login-btn w480">微信授权登录</t-button>
+  </view>
+</form>
+<t-dialog visible="{{visible}}">
+  <view class="login-dialog-wrap" slot="content">
+    <view class="dialog-tips">为了提高我们的服务质量，保障您的用户体验，请授权手机号。</view>
+    <view class="login-dialog-btn-wrap">
+      <t-button t-class="dialog-btn left-btn" catchtap="onReject">残忍拒绝</t-button>
+      <t-button theme="primary" t-class="login-btn dialog-btn right-btn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">手机号授权</t-button>
+    </view>
+  </view>
+</t-dialog>

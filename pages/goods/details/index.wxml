@@ -1,0 +1,92 @@
+<view class="goods-detail-page">
+  <view class="goods-head">
+    <t-swiper wx:if="{{details.sliderImages.length > 0}}" t-class="t-swiper" current="{{current}}" autoplay="{{autoplay}}" duration="{{duration}}" interval="{{interval}}" navigation="{{navigation}}">
+      <t-swiper-item wx:for="{{details.sliderImages}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+        <t-image src="{{item}}" t-class="swipe-img" />
+      </t-swiper-item>
+    </t-swiper>
+    <view wx:else>
+      <t-image src="{{details.image}}" t-class="swipe-img" />
+    </view>
+    <view class="goods-info">
+      <view class="goods-number">
+        <view class="goods-price">
+          <price priceUnit="yuan" wr-class="class-goods-price" symbol-class="class-goods-symbol" price="{{details.retailPrice}}" type="lighter" />
+        </view>
+      </view>
+      <view class="goods-title">
+        <view class="goods-name">{{details.productName}}</view>
+        <view class="goods-tag">
+          <t-button open-type="share" t-class="shareBtn">
+            <view class="btn-icon">
+              <t-icon name="share" size="32rpx" />
+              <view class="share-text">分享</view>
+            </view>
+          </t-button>
+        </view>
+      </view>
+      <view class="goods-intro" bindtap="showPopup" data-content="{{details.describes}}" data-title="简介">简介：{{details.describes}}</view>
+    </view>
+  </view>
+  <view class="goods-other-wrapper">
+    <view class="flex" bindtap="showPopup" data-content="{{details.nutrients}}" data-title="营养成分">
+      <view class="prefix">营养成分：</view>
+      <view class="text-ellipsis midfix">{{details.nutrients}}
+      </view>
+      <t-icon name="chevron-right" size="40rpx" />
+    </view>
+    <view class="flex" bindtap="showPopup" data-content="{{details.usages}}" data-title="服用方法">
+      <view class="prefix">服用方法：</view>
+      <view class="text-ellipsis midfix">{{details.usages}}
+      </view>
+      <t-icon name="chevron-right" size="40rpx" />
+    </view>
+    <view class="flex" bindtap="showPopup" data-content="{{details.packSpecs + details.packUnit}}" data-title="规格">
+      <view class="prefix">规格：</view>
+      <view class="text-ellipsis midfix">{{details.packSpecs}} {{details.packUnit}}
+      </view>
+      <t-icon name="chevron-right" size="40rpx" />
+    </view>
+    <view class="flex" bindtap="showPopup" data-content="{{details.effect}}" data-title="功效">
+      <view class="prefix">功效：</view>
+      <view class="text-ellipsis midfix">{{details.effect}}
+      </view>
+      <t-icon name="chevron-right" size="40rpx" />
+    </view>
+    <view class="flex" bindtap="showPopup" data-content="{{details.storeInfo}}" data-title="更多">
+      <view class="prefix">更多：</view>
+      <view class="text-ellipsis midfix">{{details.storeInfo}}
+      </view>
+      <t-icon name="chevron-right" size="40rpx" />
+    </view>
+  </view>
+  <view class="desc-content">
+    <view class="desc-content__title" wx:if="{{details.desc.length > 0}}">
+      <t-image t-class="img" src="{{recLeftImg}}" />
+      <span class="desc-content__title--text">详情介绍</span>
+      <t-image t-class="img" src="{{recRightImg}}" />
+    </view>
+    <view wx:if="{{details.minImages.length > 0}}" wx:for="{{details.minImages}}" wx:key="index">
+      <t-image t-class="desc-content__img" src="{{item}}" mode="widthFix" />
+    </view>
+  </view>
+  <view class="goods-bottom-operation">
+    <buy-bar jumpArray="{{jumpArray}}" soldout="{{soldout}}" isStock="{{isStock}}" shopCartNum="{{cartNum}}" buttonType="{{buttonType}}" details="{{details}}" bind:toAddCart="toAddCart" bind:toNav="toNav" bind:toBuyNow="buyItNow" class="goods-details-card" />
+    <goods-specs-popup id="goodsSpecsPopup" count="{{buyNum}}" show="{{isSpuSelectPopupShow}}" title="{{details.productName}}" src="{{details.image}}" limitMaxCount="{{details.stock}}" bind:closeSpecsPopup="handlePopupHide" bind:change="chooseSpecItem" bind:changeNum="changeNum" bind:addCart="addCart" bind:buyNow="gotoBuy" bind:specsConfirm="specsConfirm" isStock="{{isStock}}" outOperateStatus="{{outOperateStatus}}">
+      <view slot="goods-price">
+        <view class="popup-sku__price">
+          <price priceUnit="yuan" price="{{details.retailPrice}}" wr-class="popup-sku__price-num" symbol-class="popup-sku__price-symbol" />
+        </view>
+      </view>
+    </goods-specs-popup>
+  </view>
+</view>
+<t-toast id="t-toast" />
+<t-popup visible="{{ popupshow }}" z-index="{{ 1000 }}" placement="bottom" bind:visible-change="onClose">
+  <view class="popup-content-wrapper">
+    <view class="popup-title">{{popupInfo.title}}</view>
+    <view class="popup-info">
+      <text>{{popupInfo.content}}</text>
+    </view>
+  </view>
+</t-popup>

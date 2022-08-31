@@ -1,0 +1,72 @@
+page {
+  min-height: none;
+  padding-bottom: 0;
+}
+
+.wrap {
+  display: flex;
+}
+
+.aside-wrap {
+  border-right: 1rpx solid #eee;
+  background-color: #f3f3f3;
+  height: 100vh;
+}
+
+.wrap .t-tabs .t-is-active {
+  color: #fa4126
+}
+
+.empty-wrap {
+  margin-top: 184rpx;
+  margin-bottom: 120rpx;
+  height: 300rpx;
+}
+
+.empty-wrap .empty-tips .empty-content .content-text {
+  margin-top: 40rpx;
+}
+
+.nav-wrap .goods-item {
+  padding: 24rpx;
+}
+
+.nav-wrap .goods-item__title {
+  width: 38vw;
+}
+
+.nav-wrap .goods-item__desc {
+  width: 38vw;
+}
+
+.nav-wrap .goods-item__pricenum {
+  width: 36vw;
+}
+
+.no-sub-title {
+  color: #fa4126;
+  border-bottom: 1rpx solid #eee;
+  font-size: 28rpx;
+  font-weight: bold;
+  line-height: 92rpx;
+  padding-left: 48rpx;
+}
+
+.nav-wrap {
+  width: 77vw;
+  overflow: hidden;
+}
+
+.good-list-scroll-wrapper {
+  height: 84vh;
+}
+
+.subtabs {
+  word-break: break-all;
+}
+
+.t-tabs.t-tabs--left .t-tabs__item,
+.t-tabs.t-tabs--right .t-tabs__item {
+  width: 166rpx !important;
+  line-height: 92rpx !important;
+}

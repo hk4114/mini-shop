@@ -1,0 +1,38 @@
+<view class="select-service">
+  <!-- 售后表单 -->
+  <view class="service-form">
+    <view class="service-from-group">
+      <t-cell-group>
+        <t-cell t-class-left="t-cell__left" title="商品收货状态" arrow note="{{serviceFrom.receiptStatus.desc}}" bind:tap="onApplyGoodsStatus" />
+        <t-cell t-class-left="t-cell__left" title="退款原因" note="{{serviceFrom.applyReason.desc}}" arrow bindtap="onApplyReturnGoodsStatus" />
+      </t-cell-group>
+    </view>
+    <view class="service-from-group">
+      <t-cell-group>
+        <t-cell title="退款说明" t-class-left="t-cell__left" bordered="{{false}}">
+          <t-textarea value="{{serviceFrom.remark}}" t-class="service-from-group__textarea" slot="description" maxlength="200" placeholder="补充描述，有助于更好的处理售后问题" bind:change="onRemarkChange" />
+        </t-cell>
+      </t-cell-group>
+    </view>
+    <view class="service-from-group__grid">
+      <t-uploader media-type="{{['image']}}" files="{{serviceFrom.rightsImageUrls}}" bind:remove="handleRemove" bind:success="handleSuccess" bind:complete="handleComplete" bind:select-change="handleSelectChange" gridConfig="{{uploadGridConfig}}" addContent="slot" max="3">
+        <view slot="addContent" class="upload-addcontent-slot">
+          <t-icon name="add" size="60rpx" />
+          <view class="upload-desc">
+            <text>上传凭证</text>
+            <text>（最多3张）</text>
+          </view>
+        </view>
+      </t-uploader>
+    </view>
+    <view class="bottom-bar">
+      <t-button t-class="bottom-bar__btn" bindtap="onSubmit" loading="{{submitting}}">
+        提交
+      </t-button>
+    </view>
+  </view>
+</view>
+<!-- 理由选择 -->
+<wr-reason-sheet id="wr-reason-sheet" />
+<t-dialog id="t-dialog" t-class-confirm="add-notes__confirm" />
+<t-toast id="t-toast" />

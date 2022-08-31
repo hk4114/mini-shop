@@ -1,0 +1,38 @@
+/* pages/home/components/divider/index.wxss */
+.divider-wrapper {
+  text-align: center;
+  background: #fff;
+  color: rgb(116, 116, 116);
+  font-size: 28rpx;
+  padding: 16rpx 32rpx;
+  position: relative;
+}
+
+.divider-wrapper::after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 2rpx;
+  background-color: #aaaaaa;
+  left: 25%;
+  top: 34rpx;
+}
+
+.divider-title {
+  display: inline-block;
+  padding: 4rpx 16rpx;
+  position: relative;
+  z-index: 100;
+  background: #fff;
+}
+
+.divider-title::after {
+  content: '';
+  position: absolute;
+  height: 16rpx;
+  width: 100%;
+  background-color: rgba(253, 210, 166, .8);
+  border-radius: 8rpx;
+  bottom: -4rpx;
+  left: 0;
+}

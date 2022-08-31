@@ -1,0 +1,38 @@
+<wr-loading-content position="fixed" type="spinner" wx:if="{{pageLoading}}" />
+<view class="page-container">
+  <t-pull-down-refresh id="t-pull-down-refresh" bind:refresh="onPullDownRefresh_" t-class-indicator="t-class-indicator">
+    <!-- 页面内容 -->
+    <view class="service-detail safe-bottom">
+      <!-- 退款信息 -->
+      <view class="service-section__pay">
+        <t-cell bordered="{{false}}" t-class="t-refund-wrapper" t-class-title="t-refund-info" t-class-note="t-refund-note" title="退款状态" note="{{topStatusText}}" />
+        <t-cell bordered="{{false}}" t-class="t-refund-wrapper" t-class-title="t-refund-info" t-class-note="t-refund-note" title="退款编号" note="{{service.refundOrderId}}" />
+        <t-cell bordered="{{false}}" t-class="t-refund-wrapper" t-class-title="t-refund-info" t-class-note="t-refund-note" title="申请时间" note="{{service.createTime}}" />
+        <t-cell bordered="{{false}}" t-class="t-refund-wrapper" t-class-title="t-refund-info" t-class-note="t-refund-note" title="退款原因" note="{{service.refundReasonWap}}" />
+        <t-cell bordered="{{false}}" t-class="t-refund-wrapper" t-class-title="t-refund-info" t-class-note="t-refund-note" title="退款金额">
+          <wr-price slot="note" priceUnit="yuan" price="{{service.refundPrice}}" fill />
+        </t-cell>
+      </view>
+      <!-- 商品卡片 -->
+      <view class="service-section service-goods-card-wrap" wx:if="{{service.goodsList && service.goodsList.length > 0}}">
+        <t-cell bordered="{{false}}" t-class="t-refund-wrapper" t-class-title="t-refund-info" t-class-note="t-refund-note" title="商品信息" />
+        <wr-service-goods-card wx:for="{{service.goodsList}}" wx:key="id" wx:for-item="goods" goods="{{goods}}" no-top-line bindtap="onGoodsCardTap" data-index="{{index}}">
+          <view slot="append-body">
+            {{typeText}}
+            <text wx:if="{{service.refundPrice == 1}}">退款 {{service.refundPrice}} 元</text>
+            <text wx:elif="{{service.refundPrice == 2}}">您提交的证据不足</text>
+          </view>
+          <view slot="footer" class="order-goods-card-footer">
+            <wr-price priceUnit="yuan" price="{{goods.itemRefundAmount}}" fill wr-class="order-goods-card-footer-price-class" symbol-class="order-goods-card-footer-price-symbol" decimal-class="order-goods-card-footer-price-decimal" />
+            <view class="order-goods-card-footer-num">x {{goods.rightsQuantity}}</view>
+          </view>
+        </wr-service-goods-card>
+      </view>
+      <view class="btn-wrap">
+        <wr-after-service-button-bar service="{{service}}" />
+      </view>
+    </view>
+  </t-pull-down-refresh>
+</view>
+<t-toast id="t-toast" />
+<t-dialog id="t-dialog" t-class-confirm="add-notes__confirm" />

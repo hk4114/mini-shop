@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "分类",
+  "usingComponents": {
+    "t-grid": "tdesign-miniprogram/grid/grid",
+    "t-grid-item": "tdesign-miniprogram/grid/grid-item",
+    "t-tabs": "tdesign-miniprogram/tabs/tabs",
+    "t-tab-panel": "tdesign-miniprogram/tabs/tab-panel",
+    "goods-list": "/components/goods-list/index",
+    "t-empty": "tdesign-miniprogram/empty/empty",
+    "t-load-more": "/components/load-more/index"
+  }
+}

@@ -1,0 +1,14 @@
+<view class="cart-edit-bar flex flex-v-center">
+  <view class="all-text flex flex-v-center">
+    <t-icon size="40rpx" color="{{isAllSelected ? '#FA4126' : '#BBBBBB'}}" name="{{isAllSelected ? 'check-circle-filled' : 'circle'}}" class="cart-edit-bar__check" catchtap="handleSelectAll" />
+    <text>全选</text>
+  </view>
+  <view class="flex flex-v-center">
+    <view catchtap="handleToClear" class="clear-btn">
+      清空无货商品
+    </view>
+    <view catchtap="handleToEdit" class="account-btn">
+      {{isEdit ? '完成' : '编辑'}}
+    </view>
+  </view>
+</view>

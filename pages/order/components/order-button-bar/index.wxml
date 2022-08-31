@@ -1,0 +1,34 @@
+<view class="btn-bar">
+  <view class="left">
+    <t-button wx:for="{{buttons.left}}" wx:key="type" wx:for-item="leftBtn" size="medium" t-class="{{isBtnMax ? 't-button--max':'t-button'}}  order-btn delete-btn" hover-class="order-btn--active" catchtap="onOrderBtnTap" data-type="{{leftBtn.type}}">
+      {{leftBtn.name}}
+    </t-button>
+  </view>
+  <view class="right">
+    <t-button wx:for="{{buttons.right}}" wx:key="type" wx:for-item="rightBtn" size="medium" t-class="{{isBtnMax ? 't-button--max':'t-button'}} order-btn {{rightBtn.primary ? 'primary' : 'normal'}}" hover-class="order-btn--active" catchtap="onOrderBtnTap" data-type="{{rightBtn.type}}" open-type="{{ rightBtn.openType }}" data-share="{{ rightBtn.dataShare }}">
+      {{rightBtn.name}}
+    </t-button>
+  </view>
+</view>
+<t-toast id="t-toast" />
+<t-dialog id="t-dialog" t-class-confirm="add-notes__confirm" />
+<t-dialog visible="{{expressDialog}}" confirm-btn="我再等等吧" bind:confirm="confirmHandle" t-class-confirm="add-notes__confirm">
+  <view class="dialog-item" slot="content">
+    <view class="title">物流公司</view>
+    <view class="tips">{{expressInfo.deliveryName}}</view>
+  </view>
+  <view class="dialog-item" slot="content">
+    <view class="title">物流单号</view>
+    <view class="tips">{{expressInfo.deliveryId}}</view>
+    <view class="copy" bindtap="onCopy">复制</view>
+  </view>
+</t-dialog>
+
+<t-dialog visible="{{iskefu}}" bind:confirm="handleClose" t-class-confirm="add-notes__confirm" confirm-btn="我知道了">
+  <view slot="content">
+    <view class="img-wrap">
+      长按扫描二维码
+      <t-image t-class="qrcode__img" src="{{qrcodeUrl}}" mode="aspectFill" lazy-load show-menu-by-longpress />
+    </view>
+  </view>
+</t-dialog>

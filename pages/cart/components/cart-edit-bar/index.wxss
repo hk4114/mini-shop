@@ -1,0 +1,59 @@
+.cart-eidt-bar__placeholder {
+  height: 100rpx;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-v-center {
+  align-items: center;
+}
+
+.algin-bottom {
+  text-align: end;
+}
+
+
+.cart-edit-bar {
+  height: 112rpx;
+  background-color: #fff;
+  border-top: 1rpx solid #e5e5e5;
+  padding: 16rpx 32rpx;
+  box-sizing: border-box;
+  font-size: 24rpx;
+  line-height: 36rpx;
+  color: #333;
+  justify-content: space-between;
+}
+
+.cart-edit-bar .all-text {
+  width: 110rpx;
+}
+
+.cart-edit-bar .cart-edit-bar__check {
+  margin-right: 12rpx;
+}
+
+.cart-edit-bar .account-btn {
+  width: 100rpx;
+  border: 1px solid #fa4126;
+  border-radius: 20rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  line-height: 80rpx;
+  color: #fa4126;
+  text-align: center;
+  margin-left: 32rpx;
+}
+
+.cart-edit-bar .clear-btn {
+  width: 200rpx;
+  border: 1px solid #fa4126;
+  border-radius: 20rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  line-height: 80rpx;
+  color: #fa4126;
+  text-align: center;
+}

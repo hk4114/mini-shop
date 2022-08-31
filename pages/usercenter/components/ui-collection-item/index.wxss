@@ -1,0 +1,119 @@
+.good-item-wrapper {
+  overflow: hidden;
+}
+
+.good-item-wrapper .swipe-out .wr-swiper-cell {
+  margin-top: 20rpx;
+}
+
+.good-item-wrapper .swipe-out .swipe-right-del {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 144rpx;
+  height: 100%;
+  background-color: #fa4126;
+  color: #fff;
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+
+.good-item-wrapper .draw-line {
+  position: relative;
+}
+
+.good-item-wrapper .draw-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 32rpx;
+  width: 200%;
+  height: 2rpx;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  box-sizing: border-box;
+  border-bottom: #e5e5e5 2rpx solid;
+}
+
+.good-item-wrapper .good {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32rpx;
+  background-color: #fff;
+}
+
+.good-item-wrapper .good .good-edit {
+  padding: 20rpx 0 20rpx 46rpx;
+}
+
+.good-item-wrapper .good .good-left {
+  width: 80rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.good-item-wrapper .good .good-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.good-item-wrapper .good .good-content .title {
+  font-size: 32rpx;
+  line-height: 48rpx;
+  margin-bottom: 16rpx;
+  color: #333333;
+  font-weight: bold;
+  display: flex;
+}
+
+.good-item-wrapper .good .good-content .title .text-style {
+  margin-right: 8rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 280rpx;
+}
+
+.good-item-wrapper .good .good-content .label-adds {
+  display: flex;
+}
+
+.good-item-wrapper .good .good-content .label-adds .adds {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: #999999;
+}
+
+.good-item-wrapper .good .good-content .label-adds .tag {
+  display: inline-block;
+  padding: 0rpx 8rpx;
+  min-width: 40rpx;
+  height: 32rpx;
+  border-radius: 18rpx;
+  font-size: 20rpx;
+  line-height: 32rpx;
+  text-align: center;
+  margin-right: 8rpx;
+  vertical-align: text-top;
+}
+
+.good-item-wrapper .good .good-content .label-adds .tag-default {
+  background: #ffece9;
+  color: #fa4126;
+}
+
+.good-item-wrapper .good .good-content .label-adds .tag-primary {
+  background: #f0f1ff;
+  color: #5a66ff;
+}
+
+.good-item-wrapper .good .good-content .label-adds .good-text {
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: #999999;
+}

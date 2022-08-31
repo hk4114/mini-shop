@@ -1,0 +1,17 @@
+{
+  "navigationBarTitleText": "登录注册",
+  "usingComponents": {
+    "t-button": "tdesign-miniprogram/button/button",
+    "t-input": "tdesign-miniprogram/input/input",
+    "t-image": "/components/webp-image/index",
+    "t-count-down": "tdesign-miniprogram/count-down/count-down",
+    "t-textarea": "tdesign-miniprogram/textarea/textarea",
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "t-cell-group": "tdesign-miniprogram/cell-group/cell-group",
+    "t-cell": "tdesign-miniprogram/cell/cell",
+    "t-toast": "tdesign-miniprogram/toast/toast",
+    "t-dialog": "tdesign-miniprogram/dialog/dialog",
+    "t-switch": "tdesign-miniprogram/switch/switch",
+    "t-popup": "tdesign-miniprogram/popup/popup"
+  }
+}
