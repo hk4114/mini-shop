@@ -1,6 +1,5 @@
 import Dialog from 'tdesign-miniprogram/dialog/index';
 import Toast from 'tdesign-miniprogram/toast/index';
-import { fetchCartGroupData } from '../../services/cart/cart';
 import { fetchCartList, deleteCart, updateCart, editCartChecked } from '../../services/cart/index';
 
 const calcSettleDetailData = (list) => {
@@ -109,15 +108,6 @@ Page({
       }
     })
     return false
-  },
-
-  // 注：实际场景时应该调用接口获取购物车数据
-  getCartGroupData() {
-    const { cartGroupData } = this.data;
-    if (!cartGroupData) {
-      return fetchCartGroupData();
-    }
-    return Promise.resolve({ data: cartGroupData });
   },
 
   // 全选门店

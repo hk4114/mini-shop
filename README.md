@@ -13,7 +13,6 @@
     |-- components	//	公共组件库
     |-- config	//	基础配置
     |-- custom-tab-bar	//	自定义 tabbar
-    |-- model	//	mock 数据
     |-- pages
     |   |-- cart	//	购物车相关页面
     |   |-- goods	//	商品相关页面

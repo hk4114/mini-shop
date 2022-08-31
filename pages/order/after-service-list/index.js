@@ -1,5 +1,4 @@
-import { getRightsList } from './api';
-import { AfterServiceStatus, ServiceType, ServiceTypeDesc } from '../config';
+import { AfterServiceStatus } from '../config';
 import { queryRefundOrder } from '../../../services/order/index'
 
 Page({

@@ -23,7 +23,6 @@
     "pages/order/after-service-detail/index",
     "pages/order/fill-tracking-no/index",
     "pages/order/delivery-detail/index",
-    "pages/order/invoice/index",
     "pages/usercenter/phonebtn/index",
     "pages/login/login"
   ],
